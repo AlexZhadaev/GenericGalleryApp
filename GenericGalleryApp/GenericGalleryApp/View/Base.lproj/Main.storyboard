@@ -29,7 +29,21 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AGx-0U-12V">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9XF-O7-fdf">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9XF-O7-fdf" firstAttribute="leading" secondItem="AGx-0U-12V" secondAttribute="leading" id="9Yh-QH-L9L"/>
+                                        <constraint firstAttribute="bottom" secondItem="9XF-O7-fdf" secondAttribute="bottom" id="iSo-yK-7UP"/>
+                                        <constraint firstAttribute="trailing" secondItem="9XF-O7-fdf" secondAttribute="trailing" id="jGd-ay-Gel"/>
+                                        <constraint firstItem="9XF-O7-fdf" firstAttribute="top" secondItem="AGx-0U-12V" secondAttribute="top" id="lAG-wn-XRQ"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="photoImageView" destination="9XF-O7-fdf" id="Gcu-j2-GsD"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
