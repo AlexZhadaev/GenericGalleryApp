@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "IMG_20190615_110616.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "compression-type" : "lossy"
+  }
+}
