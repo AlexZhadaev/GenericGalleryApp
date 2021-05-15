@@ -12,8 +12,13 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     
     func prepare(for image: UIImage) {
-        photoImageView.image = image
-        photoImageView.contentMode = .scaleAspectFill
-        photoImageView.clipsToBounds = true
+        DispatchQueue.main.async {
+            self.photoImageView.contentMode = .scaleAspectFill
+            self.photoImageView.clipsToBounds = true
+            self.photoImageView.image = image
+        }
+        
     }
+    
 }
+
