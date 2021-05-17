@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,8 +31,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9XF-O7-fdf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9XF-O7-fdf">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -43,6 +45,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="photoImageView" destination="9XF-O7-fdf" id="Gcu-j2-GsD"/>
+                                    <segue destination="cZJ-CF-3rU" kind="presentation" identifier="selectedImageSegueIdentifier" id="FbX-5m-0Dj"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -55,7 +58,50 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBL-Yh-mqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740.57971014492762" y="68.973214285714278"/>
+            <point key="canvasLocation" x="542" y="69"/>
+        </scene>
+        <!--Selected Image View Controller-->
+        <scene sceneID="evI-Tk-vrP">
+            <objects>
+                <viewController id="cZJ-CF-3rU" customClass="SelectedImageViewController" customModule="GenericGalleryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c1x-4U-zpb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-xH-ZqY">
+                                <rect key="frame" x="0.0" y="197" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RAM-xH-ZqY" secondAttribute="height" multiplier="1:1" id="11u-tp-fAb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwI-ix-lnt" userLabel="Share">
+                                <rect key="frame" x="171.5" y="741" width="71" height="22"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title=" Share" image="arrowshape.turn.up.right.circle" catalog="system">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareTapped:" destination="cZJ-CF-3rU" eventType="touchUpInside" id="xab-HW-Cow"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GBU-j0-bDQ"/>
+                        <color key="backgroundColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="SwI-ix-lnt" firstAttribute="centerX" secondItem="c1x-4U-zpb" secondAttribute="centerX" id="FpC-M9-C1E"/>
+                            <constraint firstItem="GBU-j0-bDQ" firstAttribute="trailing" secondItem="RAM-xH-ZqY" secondAttribute="trailing" id="bG1-Lg-92O"/>
+                            <constraint firstItem="RAM-xH-ZqY" firstAttribute="leading" secondItem="GBU-j0-bDQ" secondAttribute="leading" id="n7v-Np-b8c"/>
+                            <constraint firstItem="GBU-j0-bDQ" firstAttribute="bottom" secondItem="SwI-ix-lnt" secondAttribute="bottom" constant="45" id="oIM-ul-jHW"/>
+                            <constraint firstItem="RAM-xH-ZqY" firstAttribute="centerY" secondItem="GBU-j0-bDQ" secondAttribute="centerY" id="rRq-v6-cKB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="selectedImage" destination="RAM-xH-ZqY" id="M38-KM-cp1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9L-Hz-Cmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244.9275362318842" y="68.973214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HR2-yw-JKP">
@@ -77,6 +123,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.right.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

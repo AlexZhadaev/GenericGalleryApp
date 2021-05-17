@@ -17,7 +17,6 @@ class GalleryCollectionViewCell: UICollectionViewCell {
             self.photoImageView.clipsToBounds = true
             self.photoImageView.image = image
         }
-        
     }
     
 }
