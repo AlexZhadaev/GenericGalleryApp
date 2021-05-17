@@ -14,7 +14,8 @@
 		35A0C5A726443DA4004EE194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A0C5A526443DA4004EE194 /* LaunchScreen.storyboard */; };
 		35A0C5AF2644400D004EE194 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0C5AE2644400D004EE194 /* GalleryCollectionViewController.swift */; };
 		35A0C5ED264C696D004EE194 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0C5EC264C696D004EE194 /* GalleryCollectionViewCell.swift */; };
-		35A0C5EF264C6B5F004EE194 /* GalleryCollectionLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0C5EE264C6B5F004EE194 /* GalleryCollectionLayoutExtension.swift */; };
+		35A0C5EF264C6B5F004EE194 /* LayoutExtension+GalleryCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0C5EE264C6B5F004EE194 /* LayoutExtension+GalleryCollection.swift */; };
+		35A0C5F42652EC08004EE194 /* SelectedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0C5F32652EC08004EE194 /* SelectedImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		35A0C5A826443DA4004EE194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35A0C5AE2644400D004EE194 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
 		35A0C5EC264C696D004EE194 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
-		35A0C5EE264C6B5F004EE194 /* GalleryCollectionLayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionLayoutExtension.swift; sourceTree = "<group>"; };
+		35A0C5EE264C6B5F004EE194 /* LayoutExtension+GalleryCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutExtension+GalleryCollection.swift"; sourceTree = "<group>"; };
+		35A0C5F32652EC08004EE194 /* SelectedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				35A0C5AE2644400D004EE194 /* GalleryCollectionViewController.swift */,
-				35A0C5EE264C6B5F004EE194 /* GalleryCollectionLayoutExtension.swift */,
+				35A0C5EE264C6B5F004EE194 /* LayoutExtension+GalleryCollection.swift */,
+				35A0C5F32652EC08004EE194 /* SelectedImageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -168,7 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				35A0C59B26443D9E004EE194 /* AppDelegate.swift in Sources */,
-				35A0C5EF264C6B5F004EE194 /* GalleryCollectionLayoutExtension.swift in Sources */,
+				35A0C5F42652EC08004EE194 /* SelectedImageViewController.swift in Sources */,
+				35A0C5EF264C6B5F004EE194 /* LayoutExtension+GalleryCollection.swift in Sources */,
 				35A0C5ED264C696D004EE194 /* GalleryCollectionViewCell.swift in Sources */,
 				35A0C59D26443D9E004EE194 /* SceneDelegate.swift in Sources */,
 				35A0C5AF2644400D004EE194 /* GalleryCollectionViewController.swift in Sources */,
