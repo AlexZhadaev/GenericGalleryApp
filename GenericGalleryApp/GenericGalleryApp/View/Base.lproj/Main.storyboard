@@ -35,15 +35,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="vZm-Sq-Un0">
+                                            <rect key="frame" x="54" y="54" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="9XF-O7-fdf" secondAttribute="bottom" id="457-rf-EoV"/>
                                         <constraint firstAttribute="trailing" secondItem="9XF-O7-fdf" secondAttribute="trailing" id="Gwg-0G-iVd"/>
                                         <constraint firstItem="9XF-O7-fdf" firstAttribute="leading" secondItem="gYP-ev-Nut" secondAttribute="leading" id="OP2-d0-0pH"/>
+                                        <constraint firstItem="vZm-Sq-Un0" firstAttribute="centerY" secondItem="9XF-O7-fdf" secondAttribute="centerY" id="beK-0Z-qFE"/>
+                                        <constraint firstItem="vZm-Sq-Un0" firstAttribute="centerX" secondItem="9XF-O7-fdf" secondAttribute="centerX" id="dTf-3v-3IO"/>
                                         <constraint firstItem="9XF-O7-fdf" firstAttribute="top" secondItem="gYP-ev-Nut" secondAttribute="top" id="j9K-ay-1zq"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="vZm-Sq-Un0" id="T1A-S3-aNz"/>
                                     <outlet property="photoImageView" destination="9XF-O7-fdf" id="Gcu-j2-GsD"/>
                                     <segue destination="cZJ-CF-3rU" kind="presentation" identifier="selectedImageSegueIdentifier" id="FbX-5m-0Dj"/>
                                 </connections>

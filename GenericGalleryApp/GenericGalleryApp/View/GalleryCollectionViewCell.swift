@@ -10,13 +10,28 @@ import UIKit
 class GalleryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    fileprivate var image: UIImage? {
+        get {
+            return photoImageView.image
+        }
+        set {
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+            photoImageView.contentMode = .scaleAspectFill
+            photoImageView.clipsToBounds = true
+            photoImageView.image = newValue
+        }
+    }
+    
+    func activityIndicatorPrepare() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
     
     func prepare(for image: UIImage) {
-        DispatchQueue.main.async {
-            self.photoImageView.contentMode = .scaleAspectFill
-            self.photoImageView.clipsToBounds = true
-            self.photoImageView.image = image
-        }
+        self.image = image
     }
     
 }
