@@ -41,9 +41,17 @@ class GalleryCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "galleryCellIdentifier", for: indexPath) as! GalleryCollectionViewCell
-        let imageString = photos[indexPath.item]
-        let image = UIImage(named: imageString)!
-        cell.prepare(for: image)
+        cell.activityIndicatorPrepare()
+        
+        let queue = DispatchQueue.global(qos: .userInteractive)
+        queue.async {
+            let imageString = self.photos[indexPath.item]
+            guard let image = UIImage(named: imageString) else { return }
+            DispatchQueue.main.async {
+                cell.prepare(for: image)
+            }
+        }
+        
         return cell
     }
     
